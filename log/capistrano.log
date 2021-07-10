@@ -258,3 +258,187 @@
  DEBUG [a683ec97] Command: ng build --prod
  DEBUG [a683ec97] 	The build command requires to be run in an Angular project, but a project definition could not be found.
  DEBUG [a683ec97] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-07-10 01:48:40 -0400 cap development deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8d3e15b4] Running /usr/bin/env mkdir -p /tmp as james@localhost
+ DEBUG [8d3e15b4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8d3e15b4] Finished in 0.159 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-5825bcad9430e53b47af.sh 0.0%
+  INFO Uploading /tmp/git-ssh-5825bcad9430e53b47af.sh 100.0%
+  INFO [2c9bddfa] Running /usr/bin/env chmod 700 /tmp/git-ssh-5825bcad9430e53b47af.sh as james@localhost
+ DEBUG [2c9bddfa] Command: /usr/bin/env chmod 700 /tmp/git-ssh-5825bcad9430e53b47af.sh
+  INFO [2c9bddfa] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [6c745ce8] Running /usr/bin/env git ls-remote git@github.com:james05/capdemo.git HEAD as james@localhost
+ DEBUG [6c745ce8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-5825bcad9430e53b47af.sh" ; /usr/bin/env git ls-remote git@github.com:james05/capdemo.git HEAD )
+ DEBUG [6c745ce8] 	5b1abe303e263568fb836f6391aa528755607624	HEAD
+  INFO [6c745ce8] Finished in 0.638 seconds with exit status 0 (successful).
+  INFO [718bdd58] Running /usr/bin/env mkdir -p /var/www/html/demo/shared /var/www/html/demo/releases as james@localhost
+ DEBUG [718bdd58] Command: /usr/bin/env mkdir -p /var/www/html/demo/shared /var/www/html/demo/releases
+  INFO [718bdd58] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [ccec746c] Running [ -f /var/www/html/demo/current/REVISION ] as james@localhost
+ DEBUG [ccec746c] Command: [ -f /var/www/html/demo/current/REVISION ]
+ DEBUG [ccec746c] Finished in 0.002 seconds with exit status 0 (successful).
+ DEBUG [6b6948ed] Running /usr/bin/env cat /var/www/html/demo/current/REVISION 2>/dev/null as james@localhost
+ DEBUG [6b6948ed] Command: /usr/bin/env cat /var/www/html/demo/current/REVISION 2>/dev/null
+ DEBUG [6b6948ed] 	511d1d30cf8b2d6445227d9c8c4cdd750459af15
+ DEBUG [6b6948ed] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [fc5b736e] Running [ -f /var/www/html/demo/repo/HEAD ] as james@localhost
+ DEBUG [fc5b736e] Command: [ -f /var/www/html/demo/repo/HEAD ]
+ DEBUG [fc5b736e] Finished in 0.002 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/demo/repo
+ DEBUG [163af635] Running if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi as james@localhost
+ DEBUG [163af635] Command: if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi
+ DEBUG [163af635] Finished in 0.002 seconds with exit status 0 (successful).
+  INFO [62492b11] Running /usr/bin/env git remote set-url origin git@github.com:james05/capdemo.git as james@localhost
+ DEBUG [62492b11] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-5825bcad9430e53b47af.sh" ; /usr/bin/env git remote set-url origin git@github.com:james05/capdemo.git )
+  INFO [62492b11] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [5a5698ca] Running /usr/bin/env git remote update --prune as james@localhost
+ DEBUG [5a5698ca] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-5825bcad9430e53b47af.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [5a5698ca] 	Fetching origin
+ DEBUG [5a5698ca] 	From github.com:james05/capdemo
+   511d1d3..5b1abe3  master     -> master
+  INFO [5a5698ca] Finished in 0.749 seconds with exit status 0 (successful).
+ DEBUG [269083d5] Running if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi as james@localhost
+ DEBUG [269083d5] Command: if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi
+ DEBUG [269083d5] Finished in 0.002 seconds with exit status 0 (successful).
+  INFO [98fdb660] Running /usr/bin/env mkdir -p /var/www/html/demo/releases/20210710054841 as james@localhost
+ DEBUG [98fdb660] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-5825bcad9430e53b47af.sh" ; /usr/bin/env mkdir -p /var/www/html/demo/releases/20210710054841 )
+  INFO [98fdb660] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [336c63b0] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/demo/releases/20210710054841 as james@localhost
+ DEBUG [336c63b0] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-5825bcad9430e53b47af.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/demo/releases/20210710054841 )
+  INFO [336c63b0] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [b2a684b9] Running if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi as james@localhost
+ DEBUG [b2a684b9] Command: if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi
+ DEBUG [b2a684b9] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [e4f49b5b] Running /usr/bin/env git rev-list --max-count=1 master as james@localhost
+ DEBUG [e4f49b5b] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-5825bcad9430e53b47af.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [e4f49b5b] 	5b1abe303e263568fb836f6391aa528755607624
+ DEBUG [e4f49b5b] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [9e00b46b] Running if test ! -d /var/www/html/demo/releases/20210710054841; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054841'" 1>&2; false; fi as james@localhost
+ DEBUG [9e00b46b] Command: if test ! -d /var/www/html/demo/releases/20210710054841; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054841'" 1>&2; false; fi
+ DEBUG [9e00b46b] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [8c69536a] Running /usr/bin/env echo "5b1abe303e263568fb836f6391aa528755607624" > REVISION as james@localhost
+ DEBUG [8c69536a] Command: cd /var/www/html/demo/releases/20210710054841 && /usr/bin/env echo "5b1abe303e263568fb836f6391aa528755607624" > REVISION
+  INFO [8c69536a] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [1b27af59] Running /usr/bin/env ln -s /var/www/html/demo/releases/20210710054841 /var/www/html/demo/releases/current as james@localhost
+ DEBUG [1b27af59] Command: /usr/bin/env ln -s /var/www/html/demo/releases/20210710054841 /var/www/html/demo/releases/current
+  INFO [1b27af59] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [c8f967e9] Running /usr/bin/env mv /var/www/html/demo/releases/current /var/www/html/demo as james@localhost
+ DEBUG [c8f967e9] Command: /usr/bin/env mv /var/www/html/demo/releases/current /var/www/html/demo
+  INFO [c8f967e9] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [d6c1fabf] Running npm install as james@localhost
+ DEBUG [d6c1fabf] Command: npm install
+ DEBUG [d6c1fabf] 	npm
+ DEBUG [d6c1fabf] 	 WARN
+ DEBUG [d6c1fabf] 	 saveError ENOENT: no such file or directory, open '/home/james/package.json'
+ DEBUG [d6c1fabf] 	npm WARN
+ DEBUG [d6c1fabf] 	 
+ DEBUG [d6c1fabf] 	enoent ENOENT: no such file or directory, open '/home/james/package.json'
+ DEBUG [d6c1fabf] 	npm WARN james No description
+ DEBUG [d6c1fabf] 	npm WARN
+ DEBUG [d6c1fabf] 	 james No repository field.
+ DEBUG [d6c1fabf] 	npm WARN james No README data
+ DEBUG [d6c1fabf] 	npm WARN james No license field.
+ DEBUG [d6c1fabf] 	
+ DEBUG [d6c1fabf] 	up to date in 0.301s
+ DEBUG [d6c1fabf] 	found 0 vulnerabilities
+
+  INFO [d6c1fabf] Finished in 0.579 seconds with exit status 0 (successful).
+  INFO [89372253] Running ng build --prod as james@localhost
+ DEBUG [89372253] Command: ng build --prod
+ DEBUG [89372253] 	The build command requires to be run in an Angular project, but a project definition could not be found.
+ DEBUG [89372253] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2021-07-10 01:49:41 -0400 cap development deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3556de48] Running /usr/bin/env mkdir -p /tmp as james@localhost
+ DEBUG [3556de48] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3556de48] Finished in 0.158 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-bb8e06af8cc542939ead.sh 0.0%
+  INFO Uploading /tmp/git-ssh-bb8e06af8cc542939ead.sh 100.0%
+  INFO [4f1452db] Running /usr/bin/env chmod 700 /tmp/git-ssh-bb8e06af8cc542939ead.sh as james@localhost
+ DEBUG [4f1452db] Command: /usr/bin/env chmod 700 /tmp/git-ssh-bb8e06af8cc542939ead.sh
+  INFO [4f1452db] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [ee3f3763] Running /usr/bin/env git ls-remote git@github.com:james05/capdemo.git HEAD as james@localhost
+ DEBUG [ee3f3763] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bb8e06af8cc542939ead.sh" ; /usr/bin/env git ls-remote git@github.com:james05/capdemo.git HEAD )
+ DEBUG [ee3f3763] 	5b1abe303e263568fb836f6391aa528755607624	HEAD
+  INFO [ee3f3763] Finished in 0.822 seconds with exit status 0 (successful).
+  INFO [edf98343] Running /usr/bin/env mkdir -p /var/www/html/demo/shared /var/www/html/demo/releases as james@localhost
+ DEBUG [edf98343] Command: /usr/bin/env mkdir -p /var/www/html/demo/shared /var/www/html/demo/releases
+  INFO [edf98343] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [c8edf13d] Running [ -f /var/www/html/demo/current/REVISION ] as james@localhost
+ DEBUG [c8edf13d] Command: [ -f /var/www/html/demo/current/REVISION ]
+ DEBUG [c8edf13d] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [626d6b24] Running /usr/bin/env cat /var/www/html/demo/current/REVISION 2>/dev/null as james@localhost
+ DEBUG [626d6b24] Command: /usr/bin/env cat /var/www/html/demo/current/REVISION 2>/dev/null
+ DEBUG [626d6b24] 	5b1abe303e263568fb836f6391aa528755607624
+ DEBUG [626d6b24] Finished in 0.012 seconds with exit status 0 (successful).
+ DEBUG [e2beca01] Running [ -f /var/www/html/demo/repo/HEAD ] as james@localhost
+ DEBUG [e2beca01] Command: [ -f /var/www/html/demo/repo/HEAD ]
+ DEBUG [e2beca01] Finished in 0.009 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/demo/repo
+ DEBUG [5215215e] Running if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi as james@localhost
+ DEBUG [5215215e] Command: if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi
+ DEBUG [5215215e] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [e7ef2236] Running /usr/bin/env git remote set-url origin git@github.com:james05/capdemo.git as james@localhost
+ DEBUG [e7ef2236] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bb8e06af8cc542939ead.sh" ; /usr/bin/env git remote set-url origin git@github.com:james05/capdemo.git )
+  INFO [e7ef2236] Finished in 0.014 seconds with exit status 0 (successful).
+  INFO [ee8f3b09] Running /usr/bin/env git remote update --prune as james@localhost
+ DEBUG [ee8f3b09] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bb8e06af8cc542939ead.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ee8f3b09] 	Fetching origin
+  INFO [ee8f3b09] Finished in 5.622 seconds with exit status 0 (successful).
+ DEBUG [32166d03] Running if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi as james@localhost
+ DEBUG [32166d03] Command: if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi
+ DEBUG [32166d03] Finished in 0.048 seconds with exit status 0 (successful).
+  INFO [c8adbfb7] Running /usr/bin/env mkdir -p /var/www/html/demo/releases/20210710054942 as james@localhost
+ DEBUG [c8adbfb7] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bb8e06af8cc542939ead.sh" ; /usr/bin/env mkdir -p /var/www/html/demo/releases/20210710054942 )
+  INFO [c8adbfb7] Finished in 0.013 seconds with exit status 0 (successful).
+  INFO [00c78812] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/demo/releases/20210710054942 as james@localhost
+ DEBUG [00c78812] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bb8e06af8cc542939ead.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/demo/releases/20210710054942 )
+  INFO [00c78812] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [4df7926d] Running if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi as james@localhost
+ DEBUG [4df7926d] Command: if test ! -d /var/www/html/demo/repo; then echo "Directory does not exist '/var/www/html/demo/repo'" 1>&2; false; fi
+ DEBUG [4df7926d] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [43f1a019] Running /usr/bin/env git rev-list --max-count=1 master as james@localhost
+ DEBUG [43f1a019] Command: cd /var/www/html/demo/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-bb8e06af8cc542939ead.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [43f1a019] 	5b1abe303e263568fb836f6391aa528755607624
+ DEBUG [43f1a019] Finished in 0.016 seconds with exit status 0 (successful).
+ DEBUG [c535506e] Running if test ! -d /var/www/html/demo/releases/20210710054942; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054942'" 1>&2; false; fi as james@localhost
+ DEBUG [c535506e] Command: if test ! -d /var/www/html/demo/releases/20210710054942; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054942'" 1>&2; false; fi
+ DEBUG [c535506e] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [a3d4de53] Running /usr/bin/env echo "5b1abe303e263568fb836f6391aa528755607624" > REVISION as james@localhost
+ DEBUG [a3d4de53] Command: cd /var/www/html/demo/releases/20210710054942 && /usr/bin/env echo "5b1abe303e263568fb836f6391aa528755607624" > REVISION
+  INFO [a3d4de53] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [0ed6d329] Running /usr/bin/env ln -s /var/www/html/demo/releases/20210710054942 /var/www/html/demo/releases/current as james@localhost
+ DEBUG [0ed6d329] Command: /usr/bin/env ln -s /var/www/html/demo/releases/20210710054942 /var/www/html/demo/releases/current
+  INFO [0ed6d329] Finished in 0.010 seconds with exit status 0 (successful).
+  INFO [db842d6a] Running /usr/bin/env mv /var/www/html/demo/releases/current /var/www/html/demo as james@localhost
+ DEBUG [db842d6a] Command: /usr/bin/env mv /var/www/html/demo/releases/current /var/www/html/demo
+  INFO [db842d6a] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [5acbc7fc] Running if test ! -d /var/www/html/demo/releases/20210710054942; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054942'" 1>&2; false; fi as james@localhost
+ DEBUG [5acbc7fc] Command: if test ! -d /var/www/html/demo/releases/20210710054942; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054942'" 1>&2; false; fi
+ DEBUG [5acbc7fc] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [85f6062e] Running npm install as james@localhost
+ DEBUG [85f6062e] Command: npm install
+ DEBUG [85f6062e] 	npm
+ DEBUG [85f6062e] 	 
+ DEBUG [85f6062e] 	WARN saveError ENOENT: no such file or directory, open '/home/james/package.json'
+ DEBUG [85f6062e] 	npm WARN enoent
+ DEBUG [85f6062e] 	 ENOENT: no such file or directory, open '/home/james/package.json'
+ DEBUG [85f6062e] 	npm WARN james No description
+ DEBUG [85f6062e] 	npm WARN james No repository field.
+ DEBUG [85f6062e] 	npm WARN james No README data
+ DEBUG [85f6062e] 	npm WARN james No license field.
+ DEBUG [85f6062e] 	
+ DEBUG [85f6062e] 	up to date in 0.296s
+ DEBUG [85f6062e] 	found 0 vulnerabilities
+
+  INFO [85f6062e] Finished in 0.594 seconds with exit status 0 (successful).
+ DEBUG [f935b4c9] Running if test ! -d /var/www/html/demo/releases/20210710054942; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054942'" 1>&2; false; fi as james@localhost
+ DEBUG [f935b4c9] Command: if test ! -d /var/www/html/demo/releases/20210710054942; then echo "Directory does not exist '/var/www/html/demo/releases/20210710054942'" 1>&2; false; fi
+ DEBUG [f935b4c9] Finished in 0.008 seconds with exit status 0 (successful).
+  INFO [690892a7] Running ng build --prod as james@localhost
+ DEBUG [690892a7] Command: ng build --prod
+ DEBUG [690892a7] 	The build command requires to be run in an Angular project, but a project definition could not be found.
+ DEBUG [690892a7] 	

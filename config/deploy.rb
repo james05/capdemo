@@ -41,14 +41,18 @@ set :deploy_to, "/var/www/html/demo"
 desc 'npm install'
 task :npm_install do
   on roles(:web), in: :sequence, wait: 5 do
-    execute "npm install"
+    within release_path do
+      execute "npm install"
+    end
   end
 end
 
 desc 'build bo'
 task :build do 
   on roles(:web), in: :sequence, wait: 5 do
-    execute "ng build --prod"
+    within release_path do
+      execute "ng build --prod"
+    end
   end
 end
 
